@@ -38,7 +38,7 @@ public class RepositoryContactService implements ContactService {
 	
 	@Transactional(rollbackFor = NotFoundException.class)
 	@Override
-	public Contact deleteById(Long id) throws NotFoundException {
+	public Contact deleteById(int id) throws NotFoundException {
 		
 		Contact contact = findById(id);
 		
@@ -49,12 +49,19 @@ public class RepositoryContactService implements ContactService {
 	
 	@Transactional(readOnly=true)
 	@Override
-	public Contact findById(Long id) throws NotFoundException {
-		Contact contact = repository.findOne(id);
-		if(contact == null) {
+	public Contact findById(int id) throws NotFoundException {
+		System.out.println("id is "+id+" "+repository);
+		Contact contact1 = null;
+		try {
+			contact1 = repository.findOne(id);
+		} catch(Exception exp) {
+			exp.printStackTrace();
+		}
+		System.out.println("contact is "+contact1);
+		if(contact1 == null) {
 			throw new NotFoundException("No contact found with id: " + id);
 		}
-		return contact;
+		return contact1;
 	}
 	
 	@Transactional(rollbackFor = NotFoundException.class)

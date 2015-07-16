@@ -3,15 +3,15 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <script type="text/javascript" src="/static/js/contact.form.js"></script>
-    <script type="text/javascript" src="/static/js/contact.update.js"></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/contact.home.js" />'></script>
+    <script type="text/javascript" src='<spring:url value="/static/js/contact.update.js" />'></script>
     <title></title>
 </head>
 <body>
 <div id="contact-id" class="hidden">${contact.id}</div>
 <h1><spring:message code="update.contact.title"/></h1>
 <form:errors path="contact" cssClass="errorBlock" element="div"/>
-<form:form action="/contact/update" cssClass="well" commandName="contact" method="POST">
+<form:form action='<spring:url value="/contact/update" />' cssClass="well" commandName="contact" method="POST">
     <form:hidden path="id"/>
     <div id="control-group-firstName" class="control-group">
         <label for="contact-firstName"><spring:message code="contact.label.firstName"/>:</label>

@@ -76,4 +76,24 @@ public class Address {
         return ToStringBuilder.reflectionToString(this);
     }
 
+	public String getCountry() {
+		return country;
+	}
+
+	public String getStreetAddress() {
+		return streetAddress;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public String getPostOffice() {
+		return postOffice;
+	}
+
+	public String getState() {
+		return state;
+	}
+    
 }

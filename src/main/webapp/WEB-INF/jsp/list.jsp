@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="/resources/js/contact.home.js"></script>
+<script type="text/javascript" src='<spring:url value="/resources/js/contact.home.js" />'></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 </head>
 <body>
 <h1><spring:message code="contact.list.title"></spring:message></h1>
 <div>
-	<a href="/contact/add" class="btn btn-primary"><spring:message code="contact.label.add.link"/></a>
+	<a href='<spring:url value="/contact/add" />' class="btn btn-primary"><spring:message code="contact.label.add.link"/></a>
 	<div id="contact-list">
 		<c:choose>
 			<c:when test="${empty contacts}">
@@ -21,7 +21,7 @@
 			<c:otherwise>
 				<c:forEach items="${contacts}" var="contact">
 					<div class="well contact-list-item">
-						<a href="/contact/${contact.id}"> <c:out value="contact.firstName"/> <c:out value="contact.lastName"/></a>
+						<a href='<spring:url value="/contact/${contact.id}" />'> <c:out value="${contact.firstName}"/> <c:out value="${contact.lastName}"/></a>
 					</div>
 				</c:forEach>
 			</c:otherwise>

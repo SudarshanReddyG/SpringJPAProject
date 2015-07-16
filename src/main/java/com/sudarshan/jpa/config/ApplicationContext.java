@@ -35,7 +35,7 @@ import com.jolbox.bonecp.BoneCPDataSource;
 })
 @EnableTransactionManagement
 @EnableWebMvc
-@EnableJpaRepositories("com.sudarshan.jpa.repositories")
+@EnableJpaRepositories(basePackages="com.sudarshan.jpa.repository", transactionManagerRef = "transactionManager", entityManagerFactoryRef = "entityManagerFactoryBean")
 @PropertySource("classpath:application.properties")
 public class ApplicationContext extends WebMvcConfigurerAdapter {
 
@@ -82,7 +82,7 @@ public class ApplicationContext extends WebMvcConfigurerAdapter {
 		return dataSource;
 	}
 
-	@Bean
+	@Bean(name="transactionManager")
 	public JpaTransactionManager transactionManager() {
 		JpaTransactionManager transactionManager = new JpaTransactionManager();
 
@@ -91,7 +91,7 @@ public class ApplicationContext extends WebMvcConfigurerAdapter {
 		return transactionManager;
 	}
 
-	@Bean
+	@Bean(name="entityManagerFactoryBean")
 	public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
 		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 

@@ -5,15 +5,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="/resources/js/contact.form.js"></script>
-	<script type="text/javascript" src="/resources/js/contact.add.js"></script>
+	<script type="text/javascript" src="resources/js/contact.form.js"></script>
+	<script type="text/javascript" src='<spring:url value="/resources/js/contact.add.js" />'></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 </head>
 <body>
 	<h1><spring:message code="add.contact.title"/></h1>
 	<form:errors path="contact" cssClass="errorBlock" element="div"/>
-	<form:form commandName="contact" action="/contact/add" method="POST" cssClass="well">
+	<spring:url value='/contact/add' var="contactUrl"/>
+	<form:form commandName="contact" action="${contactUrl}" method="POST" cssClass="well">
 		<div id="control-group-firstName" class="control-group">
         <label for="contact-firstName"><spring:message code="contact.label.firstName"/>:</label>
 
@@ -93,4 +94,5 @@
     </div>
 	
 	</form:form>
+</body>	
 </html>

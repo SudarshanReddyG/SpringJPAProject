@@ -1,18 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>    
 <!DOCTYPE html>
 <html>
 <head>
-<script type="text/javascript" src="/resources/js/contact.form.js"></script>
-<script type="text/javascript" src="/resources/js/contact.view.js"></script>
+<script type="text/javascript" src='<spring:url value="/resources/js/contact.form.js" />' ></script>
+<script type="text/javascript" src='<spring:url value="/resources/js/contact.view.js" />'></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>
 </head>
 <body>
 <div id="contact-id" class="hidden">${contact.id}</div>
-<h1><c:out value="${contact.firstName}"/> <c:out value="${contact.lastName}"/></h1>
+<c:set value="${contact.firstName}" var="fname" scope="page" />
+<h1><c:out value="${fname}"/> <c:out value="${contact.lastName}"/></h1>
 <div class="well">
     <address>
         <c:if test="${not empty contact.address}">
@@ -47,7 +48,7 @@
         </c:if>
     </address>
     <div>
-        <a href="/contact/update/${contact.id}" class="btn btn-primary"><spring:message code="update.contact.button.label"/></a>
+        <a href='<spring:url value="/contact/update/${contact.id}" />' class="btn btn-primary"><spring:message code="update.contact.button.label"/></a>
         <a id="delete-contact-link" class="btn btn-primary"><spring:message code="delete.contact.button.label"/></a>
     </div>
 </div>

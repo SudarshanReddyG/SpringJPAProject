@@ -10,7 +10,7 @@ import com.sudarshan.jpa.model.Contact;
 
 public class ContactDTO {
 	
-    private Long id;
+    private int id;
     
     @Length(max = Address.MAX_LENGTH_COUNTRY)
     private String country;
@@ -46,11 +46,11 @@ public class ContactDTO {
 
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

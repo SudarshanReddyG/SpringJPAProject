@@ -4,22 +4,22 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-responsive.css"/>
-    <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/bootstrap.css" />'/>
+    <link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/bootstrap-responsive.css" />'/>
+    <link rel="stylesheet" type="text/css" href='<spring:url value="/resources/css/styles.css"/>'/>
 
-    <script type="text/javascript" src="/static/js/vendor/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/jquery-1.7.2.js"/>'></script>
 
-    <script type="text/javascript" src="/static/js/vendor/json2.js"></script>
-    <script type="text/javascript" src="/static/js/vendor/amplify.js"></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/json2.js"/>'></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/amplify.js"/>'></script>
 
-    <script type="text/javascript" src="/static/js/vendor/bootstrap-transition.js"></script>
-    <script type="text/javascript" src="/static/js/vendor/bootstrap-alert.js"></script>
-    <script type="text/javascript" src="/static/js/vendor/bootstrap-collapse.js"></script>
-    <script type="text/javascript" src="/static/js/vendor/bootstrap-modal.js"></script>
-    <script type="text/javascript" src="/static/js/vendor/handlebars-1.0.0.beta.6.js"></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/bootstrap-transition.js"/>'></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/bootstrap-alert.js"/>'></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/bootstrap-collapse.js"/>'></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/bootstrap-modal.js"/>'></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/vendor/handlebars-1.0.0.beta.6.js"/>'></script>
 
-    <script type="text/javascript" src="/static/js/contact.js"></script>
+    <script type="text/javascript" src='<spring:url value="/resources/js/contact.js"/>'></script>
 
     <sitemesh:write property="head"/>
 
@@ -39,7 +39,7 @@
                     </a>
                     <div class="nav-collapse">
                         <ul id="navigation" class="nav">
-                            <li id="navi-homepage-link"><a href="/"><spring:message code="header.home.link.label"/></a></li>
+                            <li id="navi-homepage-link"><a href='<spring:url value="/" />'><spring:message code="header.home.link.label"/></a></li>
                             <li class="divider-vertical"></li>
                         </ul>
                     </div>
