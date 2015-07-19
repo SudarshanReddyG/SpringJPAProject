@@ -11,6 +11,8 @@
 <title></title>
 </head>
 <body>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<div id="contextPath-id" class="hidden">${contextPath}</div>
 <div id="contact-id" class="hidden">${contact.id}</div>
 <c:set value="${contact.firstName}" var="fname" scope="page" />
 <h1><c:out value="${fname}"/> <c:out value="${contact.lastName}"/></h1>

@@ -80,11 +80,8 @@ public class ContactController {
 
 	@RequestMapping(value="/contact/{id}", method=RequestMethod.GET)
 	public String showContactPage(@PathVariable("id") int id, Model model) throws NotFoundException {
-		System.out.println("before viewwwwwwwwwww "+id);
 		Contact contact = contactService.findById(id);
-		System.out.println("after contact viewwwwwwwwwww ");
 		model.addAttribute(MODEL_ATTRIBUTE_CONTACT, contact);
-		System.out.println("in viewwwwwwwwwww "+contact);
 		return CONTACT_VIEW;
 	}
 

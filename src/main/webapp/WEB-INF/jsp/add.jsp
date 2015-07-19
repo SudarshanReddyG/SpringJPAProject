@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript" src="resources/js/contact.form.js"></script>
+	<script type="text/javascript" src='<spring:url value="/resources/js/contact.form.js" />'></script>
 	<script type="text/javascript" src='<spring:url value="/resources/js/contact.add.js" />'></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title></title>

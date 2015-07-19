@@ -11,7 +11,8 @@
 <div id="contact-id" class="hidden">${contact.id}</div>
 <h1><spring:message code="update.contact.title"/></h1>
 <form:errors path="contact" cssClass="errorBlock" element="div"/>
-<form:form action='<spring:url value="/contact/update" />' cssClass="well" commandName="contact" method="POST">
+<spring:url value="/contact/update" var="updateVar"/>
+<form:form action="${updateVar}" cssClass="well" commandName="contact" method="POST">
     <form:hidden path="id"/>
     <div id="control-group-firstName" class="control-group">
         <label for="contact-firstName"><spring:message code="contact.label.firstName"/>:</label>

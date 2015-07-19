@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Version;
@@ -12,6 +14,11 @@ import javax.persistence.Version;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 @Entity
+@NamedQueries({
+@NamedQuery(name="Contact.showContacts",
+query="SELECT c FROM Contact c WHERE LOWER(c.firstName) LIKE LOWER(:searchTerm) OR LOWER(c.lastName) LIKE LOWER(:searchTerm) ORDER BY c.lastName ASC, c.firstName ASC"
+)
+})
 @Table(name="contacts")
 public class Contact {
 
